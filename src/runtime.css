@@ -2897,6 +2897,16 @@
   --tdg-select-shell-bg: transparent;
 }
 
+/* A card's `shadow-sm` paints about 3px past its sides. In plain chrome the stuck
+   toolbar is only as wide as the cards, so their edges slide past beside it. The
+   toolbar extends its fill over them without moving its layout. */
+.tdg-mobile--page-scroll[data-chrome="plain"][data-variant="cards"]
+  .tdg-mobile-toolbar {
+  box-shadow:
+    -0.25rem 0 0 var(--tdg-mobile-toolbar-bg, var(--tdg-grid-bg)),
+    0.25rem 0 0 var(--tdg-mobile-toolbar-bg, var(--tdg-grid-bg));
+}
+
 /* Themable without reaching into the classes. */
 /*
  * The mobile layout's spacing, in one place and behind tokens, so a consumer
